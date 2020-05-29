@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db');
+const flash = require('connect-flash');
+const session = require('express-session');
 
 const app = express();
 connectDB();
@@ -15,6 +17,22 @@ app.set('views', 'views');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(expressLayouts);
+
+// Session middleware
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.successMsg = req.flash('successMsg');
+  res.locals.errorMsg = req.flash('errorMsg');
+  next();
+});
 
 const PORT = process.env.PORT || 5000;
 

@@ -24,7 +24,8 @@ main {
 
 .chip_message_info,
 .chip_message_warning,
-.chip_message_alert {
+.chip_message_alert,
+.chip_message_success {
   text-align: center;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -45,10 +46,16 @@ main {
   background-color: #ef9a9a !important;
 }
 
+.chip_message_success {
+  background-color: #00c851 !important;
+  color: #fff !important;
+}
+
 @media screen and (max-width: 600px) {
   .chip_message_info,
   .chip_message_warning,
-  .chip_message_alert {
+  .chip_message_alert,
+  .chip_message_success {
     min-height: 75px;
   }
 }

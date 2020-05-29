@@ -49,7 +49,8 @@ router.post('/', async (req, res) => {
         const newUser = new User({ email, password });
         newUser.password = await bcrypt.hash(password, 10);
         await newUser.save();
-        res.send('Success');
+        req.flash('successMsg', 'Registration successful. You can login now');
+        res.redirect('/login');
       }
     } catch (err) {
       console.log(err);

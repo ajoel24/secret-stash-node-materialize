@@ -8,3 +8,10 @@
         <% }) %>
     <% } %>
 <% } %>
+
+<% if(successMsg != '') { %>
+    <div class="chip chip_message_success">
+        <%= successMsg %>
+        <i class="close material-icons" style="font-size: 2rem">close</i>
+      </div> 
+<% } %>
