@@ -1,0 +1,25 @@
+{
+  "name": "secret-stash-node-materialize",
+  "version": "1.0.0",
+  "description": "Secret stash website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Andrew Joel",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "express-ejs-layouts": "^2.5.0",
+    "mongoose": "^5.9.16",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  }
+}
