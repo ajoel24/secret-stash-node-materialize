@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 module.exports = function (passport) {
+  // Local authentication
   passport.use(
     new LocalStrategy(
       { usernameField: 'email' },
@@ -31,6 +31,22 @@ module.exports = function (passport) {
         } catch (err) {
           console.log(err);
         }
+      }
+    )
+  );
+
+  // Google OAuth 2.0 authentication
+  passport.use(
+    new GoogleStrategy(
+      {
+        clientID: process.env.GOOGLE_OAUTH_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
+        callbackURL: 'http://localhost:5000/auth/google/dashboard',
+      },
+      function (accessToken, refreshToken, profile, cb) {
+        User.findOrCreate({ googleId: profile.id }, function (err, user) {
+          return cb(err, user);
+        });
       }
     )
   );
