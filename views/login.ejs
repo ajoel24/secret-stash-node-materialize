@@ -1,3 +1,32 @@
 <div class="container">
-    
+  <div class="card-panel">
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" name="email" class="validate" />
+          <label for="email">Enter Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="password"
+            type="password"
+            name="password"
+            class="validate"
+          />
+          <label for="password">Enter Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-large">
+          Log In
+        </button>
+      </div>
+      <div class="row">
+        <h5>New User? <a href="/register">Register here.</a></h5>
+      </div>
+    </form>
+  </div>
 </div>
