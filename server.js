@@ -18,6 +18,6 @@ const PORT = process.env.PORT || 5000;
 
 app.use('/', require('./routes/index/index'));
 app.use('/login', require('./routes/login/login'));
-// app.use('/register', require('./routes/register/register'));
+app.use('/register', require('./routes/register/register'));
 
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
