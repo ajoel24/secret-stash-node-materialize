@@ -16,6 +16,8 @@ app.use(expressLayouts);
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => res.render('welcome'));
+app.get('/', require('./routes/index/index'));
+// app.get('/login', require('./routes/login/login'));
+// app.get('/register', require('./routes/register/register'));
 
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
