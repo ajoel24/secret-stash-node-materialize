@@ -5,12 +5,7 @@
     <form method="POST" action="/login">
       <div class="row">
         <div class="input-field col s12">
-          <input
-            id="email"
-            type="email"
-            name="email"
-            class="validate"
-          />
+          <input id="email" type="email" name="email" class="validate" />
           <label for="email">Enter Email</label>
         </div>
       </div>
@@ -29,6 +24,15 @@
         <button class="btn btn-large">
           Log In
         </button>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <h5>Or</h5>
+        <a href="/auth/google">
+          <button class="btn btn-large white black-text">
+            <i class="fab fa-google"></i> Sign in with Google
+          </button>
+        </a>
       </div>
       <div class="row">
         <h5>New User? <a href="/register">Register here.</a></h5>
