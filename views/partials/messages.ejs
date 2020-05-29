@@ -15,3 +15,18 @@
         <i class="close material-icons" style="font-size: 2rem">close</i>
       </div> 
 <% } %>
+
+<% if(errorMsg != '') { %>
+    <div class="chip chip_message_warning">
+        <%= error %>
+        <i class="close material-icons" style="font-size: 2rem">close</i>
+      </div> 
+<% } %>
+
+<% if(error != '') { %>
+    <div class="chip chip_message_alert">
+        <%= error %>
+        <i class="close material-icons" style="font-size: 2rem">close</i>
+      </div> 
+<% } %>
+

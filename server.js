@@ -5,9 +5,11 @@ const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./config/db');
 const flash = require('connect-flash');
 const session = require('express-session');
+const passport = require('passport');
 
 const app = express();
 connectDB();
+require('./config/passport')(passport);
 
 // Template engine
 app.set('view engine', 'ejs');
@@ -26,11 +28,14 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 app.use((req, res, next) => {
   res.locals.successMsg = req.flash('successMsg');
   res.locals.errorMsg = req.flash('errorMsg');
+  res.locals.error = req.flash('error');
   next();
 });
 
