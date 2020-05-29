@@ -1,56 +1,61 @@
 <div class="container">
-    <div class="card-panel">
-      <h2>Register</h2>
-      <%- include('./partials/messages') %>
-      <form method="POST" action="/register">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" name="email" class="validate" value="<%= typeof email == 'undefined' ? '' : email %>"/>
-            <label for="email">Enter Email</label>
-          </div>
+  <div class="card-panel">
+    <h2>Register</h2>
+    <%- include('./partials/messages') %>
+    <form method="POST" action="/register">
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            class="validate"
+            value="<%= typeof email == 'undefined' ? '' : email %>"
+          />
+          <label for="email">Enter Email</label>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input
-              id="password"
-              type="password"
-              name="password"
-              class="validate"
-              value="<%= typeof password == 'undefined' ? '' : password %>"
-            />
-            <label for="password">Enter Password</label>
-          </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="password"
+            type="password"
+            name="password"
+            class="validate"
+            value="<%= typeof password == 'undefined' ? '' : password %>"
+          />
+          <label for="password">Enter Password</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-              <input
-                id="password"
-                type="password"
-                name="password2"
-                class="validate"
-                value="<%= typeof password2 == 'undefined' ? '' : password2 %>"
-              />
-              <label for="password">Repeat Password</label>
-            </div>
-          </div>
-        <div class="row">
-          <button class="btn btn-large">
-            Register
-          </button>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="password"
+            type="password"
+            name="password2"
+            class="validate"
+            value="<%= typeof password2 == 'undefined' ? '' : password2 %>"
+          />
+          <label for="password">Repeat Password</label>
         </div>
-        <div class="divider"></div>
-        <div class="row">
-          <h5>Or</h5>
-          <a href="/auth/google">
-            <button class="btn btn-large white black-text">
-              <i class="fab fa-google"></i> Sign up with Google
-            </button>
-          </a>
-        </div>
-        <div class="row">
-          <h5>Already registered? <a href="/login">Login here.</a></h5>
-        </div>
-      </form>
+      </div>
+      <div class="row">
+        <button class="btn btn-large">
+          Register
+        </button>
+      </div>
+    </form>
+    <div class="divider"></div>
+    <div class="row">
+      <h5>Or</h5>
+      <a href="/login/auth/google" role="button">
+        <button class="btn btn-large white black-text">
+          <i class="fab fa-google"></i> Sign up with Google
+        </button>
+      </a>
+    </div>
+    <div class="row">
+      <h5>Already registered? <a href="/login">Login here.</a></h5>
     </div>
   </div>
-  
+</div>

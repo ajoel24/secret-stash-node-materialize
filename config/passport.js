@@ -41,7 +41,8 @@ module.exports = function (passport) {
       {
         clientID: process.env.GOOGLE_OAUTH_CLIENT_ID,
         clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
-        callbackURL: 'http://localhost:5000/auth/google/dashboard',
+        callbackURL: 'http://localhost:5000/login/auth/google/dashboard',
+        userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
       },
       function (accessToken, refreshToken, profile, cb) {
         User.findOrCreate({ googleId: profile.id }, function (err, user) {
