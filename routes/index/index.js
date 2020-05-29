@@ -10,4 +10,10 @@ router.get('/dashboard', (req, res) => {
   res.render('dashboard');
 });
 
+router.get('/logout', (req, res) => {
+  req.logOut();
+  req.flash('successMsg', 'You have logged out successfully');
+  res.redirect('/login');
+});
+
 module.exports = router;
