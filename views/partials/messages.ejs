@@ -1,7 +1,10 @@
 <% if(typeof errors != 'undefined') { %>
     <% if(errors.length > 0) { %>
         <% errors.forEach(function(error) { %>
-            <h6><%= error.message %></h6>
+            <div class="chip chip_message_warning">
+                <%= error.message %>
+                <i class="close material-icons" style="font-size: 2rem">close</i>
+              </div>
         <% }) %>
     <% } %>
 <% } %>

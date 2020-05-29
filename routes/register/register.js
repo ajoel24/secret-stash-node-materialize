@@ -1,4 +1,6 @@
 const express = require('express');
+const User = require('../../models/User');
+const bcrypt = require('bcrypt');
 
 const router = express.Router();
 
@@ -6,7 +8,7 @@ router.get('/', (req, res) => {
   res.render('register');
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const { email, password, password2 } = req.body;
   const errors = [];
 
@@ -23,6 +25,7 @@ router.post('/', (req, res) => {
     errors.push({ message: 'Password should be atleast 6 characters' });
   }
 
+  // After checking all validation
   if (errors.length > 0) {
     res.render('register', {
       errors,
@@ -30,6 +33,27 @@ router.post('/', (req, res) => {
       password,
       password2,
     });
+  } else {
+    try {
+      const existingUser = await User.findOne({ email });
+
+      if (existingUser) {
+        errors.push({ message: 'This email is already registered' });
+        return res.render('register', {
+          errors,
+          email,
+          password,
+          password2,
+        });
+      } else {
+        const newUser = new User({ email, password });
+        newUser.password = await bcrypt.hash(password, 10);
+        await newUser.save();
+        res.send('Success');
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 });
 

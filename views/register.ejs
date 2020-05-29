@@ -5,7 +5,7 @@
       <form method="POST" action="/register">
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" name="email" class="validate" />
+            <input id="email" type="email" name="email" class="validate" value="<%= typeof email == 'undefined' ? '' : email %>"/>
             <label for="email">Enter Email</label>
           </div>
         </div>
@@ -16,6 +16,7 @@
               type="password"
               name="password"
               class="validate"
+              value="<%= typeof password == 'undefined' ? '' : password %>"
             />
             <label for="password">Enter Password</label>
           </div>
@@ -27,6 +28,7 @@
                 type="password"
                 name="password2"
                 class="validate"
+                value="<%= typeof password2 == 'undefined' ? '' : password2 %>"
               />
               <label for="password">Repeat Password</label>
             </div>
