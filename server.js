@@ -2,8 +2,10 @@ require('dotenv').config();
 
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const connectDB = require('./config/db');
 
 const app = express();
+connectDB();
 
 // Template engine
 app.set('view engine', 'ejs');
