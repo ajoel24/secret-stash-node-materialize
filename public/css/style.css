@@ -59,7 +59,7 @@ main {
 
 .secrets {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 
 @media screen and (max-width: 600px) {
