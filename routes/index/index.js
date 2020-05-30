@@ -1,5 +1,6 @@
 const express = require('express');
-const {ensureAuth} = require('../../middleware/ensureAuth');
+const User = require('../../models/User');
+const { ensureAuth } = require('../../middleware/ensureAuth');
 
 const router = express.Router();
 
@@ -15,9 +16,24 @@ router.get('/submit', ensureAuth, (req, res) => {
   res.render('submit');
 });
 
-router.post('/submit', ensureAuth, (req, res) => {
-  const secret = req.body.secret;
-})
+router.post('/submit', ensureAuth, async (req, res) => {
+  const secret = req.body.secret.trim();
+  const errors = [];
+
+  if (secret == '') {
+    errors.push({ message: 'Secret is empty' });
+  }
+
+  if (errors.length > 0) {
+    res.render('submit', { errors });
+  } else {
+    try {
+      
+    } catch(err) {
+      console.log(err);
+    }
+  }
+});
 
 router.get('/logout', (req, res) => {
   req.logOut();
