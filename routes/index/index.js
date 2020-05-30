@@ -8,8 +8,19 @@ router.get('/', (req, res) => {
   res.render('welcome');
 });
 
-router.get('/dashboard', ensureAuth, (req, res) => {
-  res.render('dashboard');
+router.get('/dashboard', ensureAuth, async (req, res) => {
+  try {
+    const users = await User.find({ secrets: { $ne: null } });
+
+    if(users){
+      res.render('dashboard', {users});
+    } else {
+      res.render('dashboard');
+    }
+  } catch (err) {
+    console.log(err);
+  }
+
 });
 
 router.get('/submit', ensureAuth, (req, res) => {
@@ -29,8 +40,8 @@ router.post('/submit', ensureAuth, async (req, res) => {
   } else {
     try {
       const user = await User.findById(req.user._id);
-      
-      if(user) {
+
+      if (user) {
         user.secrets.push(secret);
         await user.save();
         req.flash('successMsg', 'Secret added successfully');

@@ -57,6 +57,11 @@ main {
   transform: scale(1.25);
 }
 
+.secrets {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 600px) {
   .chip_message_info,
   .chip_message_warning,
