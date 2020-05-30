@@ -1,0 +1,42 @@
+<div class="container welcome">
+  <div class="card-panel white">
+    <div class="row">
+      <div class="center-align">
+        <h3>Submit a secret</h3>
+      </div>
+      <div class="divider"></div>
+      <form method="POST" action="/submit">
+        <div class="row">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                id="textarea"
+                class="materialize-textarea"
+                name="secret"
+                style="height: 10rem;"
+                rows="20"
+                autofocus
+              ></textarea>
+              <label for="textarea">Tell a secret</label>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <button class="btn btn-large">
+            <i class="material-icons">done</i>
+            Submit
+          </button>
+        </div>
+      </form>
+      <div class="row">
+        <a href="/dashboard">
+          <button class="btn btn-large" type="submit">
+            <i class="material-icons">keyboard_arrow_left</i>
+            Back
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

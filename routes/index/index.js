@@ -11,6 +11,14 @@ router.get('/dashboard', ensureAuth, (req, res) => {
   res.render('dashboard');
 });
 
+router.get('/submit', ensureAuth, (req, res) => {
+  res.render('submit');
+});
+
+router.post('/submit', ensureAuth, (req, res) => {
+  const secret = req.body.secret;
+})
+
 router.get('/logout', (req, res) => {
   req.logOut();
   req.flash('successMsg', 'You have logged out successfully');

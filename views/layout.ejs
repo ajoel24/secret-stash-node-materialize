@@ -44,5 +44,21 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+          direction: 'top',
+          hoverEnabled: false,
+        });
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function () {
+        $('.fixed-action-btn').floatingActionButton();
+        $('.tooltipped').tooltip();
+      });
+    </script>
   </body>
 </html>
