@@ -28,8 +28,18 @@ router.post('/submit', ensureAuth, async (req, res) => {
     res.render('submit', { errors });
   } else {
     try {
+      const user = await User.findById(req.user._id);
       
-    } catch(err) {
+      if(user) {
+        user.secrets.push(secret);
+        await user.save();
+        req.flash('successMsg', 'Secret added successfully');
+        res.redirect('/dashboard');
+      } else {
+        req.flash('errorMsg', 'User not found');
+        res.redirect('/dashboard');
+      }
+    } catch (err) {
       console.log(err);
     }
   }
