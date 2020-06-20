@@ -1,13 +1,11 @@
 <div align="center">
-## Secret Stash
-### Share your secrets anonymously! 
-![MIT License](https://img.shields.io/github/license/Andrew2432/secret-stash-node-materialize)
+     *Secret Stash*
+    *Share your secrets anonymously!* 
+    ![MIT License](https://img.shields.io/github/license/Andrew2432/secret-stash-node-materialize)
 </div>
 
 
 ## Table of Contents:
-- [Secret Stash](#secret-stash)
-  - [Share your secrets anonymously!](#share-your-secrets-anonymously)
 - [Table of Contents:](#table-of-contents)
   - [About:](#about)
   - [Technologies Used:](#technologies-used)
