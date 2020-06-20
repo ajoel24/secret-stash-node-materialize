@@ -11,15 +11,6 @@ const app = express();
 connectDB();
 require('./config/passport')(passport);
 
-// Template engine
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
-app.use(expressLayouts);
-
 // Session middleware
 app.use(
   session({
@@ -31,6 +22,15 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+// Template engine
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+// Middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static('public'));
+app.use(expressLayouts);
 
 app.use((req, res, next) => {
   res.locals.successMsg = req.flash('successMsg');
