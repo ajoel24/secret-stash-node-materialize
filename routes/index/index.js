@@ -12,15 +12,14 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
   try {
     const users = await User.find({ secrets: { $ne: null } });
 
-    if(users){
-      res.render('dashboard', {users});
+    if (users) {
+      res.render('dashboard', { users });
     } else {
       res.render('dashboard');
     }
   } catch (err) {
     console.log(err);
   }
-
 });
 
 router.get('/submit', ensureAuth, (req, res) => {
@@ -57,7 +56,7 @@ router.post('/submit', ensureAuth, async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  req.logOut();
+  req.logout();
   req.flash('successMsg', 'You have logged out successfully');
   res.redirect('/login');
 });
