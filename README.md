@@ -1,8 +1,9 @@
-<div align="center">
-     *Secret Stash*
-    *Share your secrets anonymously!* 
-    ![MIT License](https://img.shields.io/github/license/Andrew2432/secret-stash-node-materialize)
-</div>
+<p align="center">
+     <h1 align="center">Secret Stash</h1>
+    <h3 align="center">Share your secrets anonymously!</h3>
+</p>
+
+![MIT License](https://img.shields.io/github/license/Andrew2432/secret-stash-node-materialize)
 
 
 ## Table of Contents:
