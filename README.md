@@ -7,10 +7,10 @@
 
 
 ## Table of Contents:
-  - [About:](#about)
-  - [Technologies Used:](#technologies-used)
-  - [Setup:](#setup)
-  - [Inspiration:](#inspiration)
+  - [About](#about)
+  - [Technologies Used](#technologies-used)
+  - [Setup](#setup)
+  - [Inspiration](#inspiration)
   
 ### About:
 It's time to share your secrets, anonymously! You can see the secrets shared by other anonymous users too.
