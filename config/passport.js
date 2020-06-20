@@ -42,7 +42,7 @@ module.exports = function (passport) {
         clientID: process.env.GOOGLE_OAUTH_CLIENT_ID,
         clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
         callbackURL:
-          'https://secure-temple-26147.herokuapp.com/login/auth/google/dashboard',
+          'https://secret-stash.herokuapp.com/login/auth/google/dashboard',
         userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
       },
       function (accessToken, refreshToken, profile, cb) {
