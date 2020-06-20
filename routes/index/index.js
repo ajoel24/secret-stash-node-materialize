@@ -56,9 +56,9 @@ router.post('/submit', ensureAuth, async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  req.session.destroy();
   req.flash('successMsg', 'You have logged out successfully');
   res.redirect('/login');
+  req.session.destroy();
 });
 
 module.exports = router;
